@@ -310,6 +310,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -348,176 +370,6 @@
 <p>打开系统的隐藏文件：</p>
 <p><code>defaults write com.apple.finder AppleShowAllFiles -bool true</code><br>关闭显示隐藏文件：<br><code>defaults write com.apple.finder AppleShowAllFiles -bool false</code></p>
 <p>tip:别忘了重启finder哦「alt+反键finder」</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/Android系统五大布局详解Layout/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mmy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mmy's Blog'">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/25/Android系统五大布局详解Layout/" itemprop="url">
-                  Android系统五大布局详解Layout
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T16:59:53+08:00">
-                2017-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我们知道Android系统应用程序一般是由多个Activity组成，而这些Activity以视图的形式展现在我们面前， 视图都是由一个一个的组件构成的。组件就是我们常见的Button、TextEdit等等。那么我们平时看到的Android手机中那些漂亮的界面是怎么显示 出来的呢？这就要用到Android的布局管理器了，网上有人比喻的很好：布局好比是建筑里的框架，组件按照布局的要求依次排列，就组成了用于看见的漂亮界面了。</p>
-<p>在分析布局之前，我们首先看看控件：Android中任何可视化的控件都是从android.veiw.View继承而来的，系统提供了两种方法来设置视图：第一种也是我们最常用的的使用XML文件来配置View的相关属性，然后在程序启动时系统根据配置文件来创建相应的View视图。第二种是我们在代码中直接使用相应的类来创建视图。</p>
-<p>如何使用XML文件定义视图：</p>
-<p>每个Android项目的源码目录下都有个res<em>layout目录，这个目录就是用来存放布局文件的。布局文件一般以对应activity的名字命名，以 .xml 为后缀。在xml中为创建组件时，需要为组件指定id,如：android:id=”@+id</em>名字”系统会自动在gen目录下创建相应的R资源类变量。</p>
-<p>如何在代码中使用视图：</p>
-<p>在代码中创建每个Activity时，一般是在onCreate()方法中，调用setContentView()来加载指定的xml布局文件，然后就可以通过findViewById()来获得在布局文件中创建的相应id的控件了，如Button等。</p>
-<p>如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">private Button btnSndMag;</div><div class="line">public void onCreate(Bundle savedInstanceState) &#123; super.onCreate(savedInstanceState); setContentView(R.layout.main);	// 加载main.xml布局文件 btnSndMag = (Button)this.findViewById(R.id.btnSndMag); // 通过id找到对于的Button组件 ....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>下面我们来介绍Android系统中为我们提供的五大布局：LinearLayout(线性布局)、FrameLayout(单帧布局)、AbsoluteLayout(绝对布局)、TablelLayout(表格布局)、RelativeLayout(相对布局)。其中最常用的的是LinearLayout、TablelLayout和RelativeLayout。这些布局都可以嵌套使用。</p>
-<p><strong>（1）LinearLayout 线性布局</strong>  </p>
-<p>线性布局是按照水平或垂直的顺序将子元素(可以是控件或布局)依次按照顺序排列，每一个元素都位于前面一个元素之后。线性布局分为两种：水平方向和垂直方向的布局。分别通过属性android:orientation=”vertical” 和 android:orientation=”horizontal”来设置。</p>
-<p>android:layout_weight 表示子元素占据的空间大小的比例，有人说这个值大小和占据空间成正比，有人说反比。我在实际应用中设置和网上资料显示的刚好相反，这个问题后面会专门写一篇文章来分析。现在我们只需要按照正比例来设置就可以。</p>
-<p>例如下面我们实现一个如图所示的简易计算器界面：</p>
-<p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:tools=&quot;http://schemas.android.com/tools&quot; android:orientation=&quot;vertical&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:background=&quot;\#FFFFFF&quot; tools:context=&quot;.MainActivity&quot; &gt; // 这里第一行显示标签为一个水平布局 &lt;LinearLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:orientation=&quot;horizontal&quot; &gt; &lt;EditText android:id=&quot;@+id/msg&quot; android:inputType=&quot;number&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;&quot;&gt; &lt;/EditText&gt; &lt;/LinearLayout&gt; // 第二行为 mc m+ m- mr 四个Button构成一个水平布局 &lt;LinearLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:orientation=&quot;horizontal&quot; &gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;mc&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;m+&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;m-&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;mr&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;/LinearLayout&gt; // 同上 C +/- / * 四个Button构成一个水平布局 &lt;LinearLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:orientation=&quot;horizontal&quot; &gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;C&quot; &gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;+/-&quot; &gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;/&quot; &gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;*&quot; &gt; &lt;/Button&gt; &lt;/LinearLayout&gt; &lt;LinearLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:orientation=&quot;horizontal&quot; &gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;7&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;8&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;9&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;-&quot; android:layout_weight=&quot;1&quot;&gt; &lt;/Button&gt; &lt;/LinearLayout&gt; &lt;LinearLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:orientation=&quot;horizontal&quot; &gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;4&quot; &gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;5&quot; &gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;6&quot; &gt; &lt;/Button&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;+&quot; &gt; &lt;/Button&gt; &lt;/LinearLayout&gt; // 最外层是一个水平布局，由左边上面一行1 2 3三个Button,下面一行的0 . 两个Button 和 右边的=构成 &lt;LinearLayout android:orientation=&quot;horizontal&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt; // 这里 1 2 3 和 下面的 0 . 构成一个垂直布局 &lt;LinearLayout android:orientation=&quot;vertical&quot; android:layout_weight=&quot;3&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;&gt; // 这里的 1 2 3 构成一个水平布局 &lt;LinearLayout android:orientation=&quot;horizontal&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt; &lt;Button android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;1&quot;&gt;&lt;/Button&gt; &lt;Button android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;2&quot;&gt;&lt;/Button&gt; &lt;Button android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;3&quot;&gt;&lt;/Button&gt; &lt;/LinearLayout&gt; // 这里的 0 和 . 构成一个水平布局，注意这里的android_weight参数设置 &lt;LinearLayout android:orientation=&quot;horizontal&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt; &lt;Button android:layout_width=&quot;0px&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;2&quot; android:text=&quot;0&quot;&gt;&lt;/Button&gt; &lt;Button android:layout_width=&quot;0px&quot; android:layout_height=&quot;wrap_content&quot; android:layout_weight=&quot;1&quot; android:text=&quot;.&quot;&gt;&lt;/Button&gt; &lt;/LinearLayout&gt; &lt;/LinearLayout&gt; // 这里一个单独Button构成的垂直布局 &lt;LinearLayout android:orientation=&quot;vertical&quot; android:layout_weight=&quot;1&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;match_parent&quot;&gt; &lt;Button android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:text=&quot;=&quot;&gt;&lt;/Button&gt; &lt;/LinearLayout&gt; &lt;/LinearLayout&gt; &lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
-<p><strong>（2）TableLayout 表格布局</strong>  </p>
-<p>表格布局，适用于多行多列的布局格式，每个TableLayout是由多个TableRow组成，一个TableRow就表示TableLayout中的每一行，这一行可以由多个子元素组成。实际上TableLayout和TableRow都是LineLayout线性布局的子类。但是TableRow的参数android:orientation属性值固定为horizontal，且android:layout_width=MATCH_PARENT，android:layout_height=WRAP_CONTENT。所以TableRow实际是一个横向的线性布局，且所以子元素宽度和高度一致。</p>
-<p>注意：在TableLayout中，单元格可以为空，但是不能跨列，意思是只能不能有相邻的单元格为空。</p>
-<p>在TableLayout布局中，一列的宽度由该列中最宽的那个单元格指定，而该表格的宽度由父容器指定。可以为每一列设置以下属性：</p>
-<p>Shrinkable  表示该列的宽度可以进行收缩，以使表格能够适应父容器的大小</p>
-<p>Stretchable 表示该列的宽度可以进行拉伸，以使能够填满表格中的空闲空间</p>
-<p>Collapsed  表示该列会被隐藏</p>
-<p>TableLayout中的特有属性：</p>
-<p>android:collapseColumns</p>
-<p>android:shrinkColumns</p>
-<p>android:stretchColumns = “0,1,2,3”</p>
-<p>Demo：我们想设计一个如下所以的一个三行三列的表格，但是第二行我们只想显示2个表格：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;TableLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:orientation=&quot;vertical&quot; android:shrinkColumns=&quot;0,1,2&quot; // 设置三列都可以收缩 android:stretchColumns=&quot;0,1,2&quot; // 设置三列都可以拉伸 如果不设置这个，那个显示的表格将不能填慢整个屏幕 android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot; &gt; &lt;TableRow android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button1&quot;&gt; &lt;/Button&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button2&quot;&gt; &lt;/Button&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button3&quot;&gt; &lt;/Button&gt; &lt;/TableRow&gt; &lt;TableRow android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button4&quot;&gt; &lt;/Button&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button5&quot;&gt; &lt;/Button&gt; &lt;/TableRow&gt; &lt;TableRow android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button6&quot;&gt; &lt;/Button&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button7&quot;&gt; &lt;/Button&gt; &lt;Button android:gravity=&quot;center&quot; android:padding=&quot;10dp&quot; android:text=&quot;Button8&quot;&gt; &lt;/Button&gt; &lt;/TableRow&gt;</div><div class="line">&lt;/TableLayout&gt;</div></pre></td></tr></table></figure>
-<p><strong>（3）RelativeLayout 相对布局</strong>   </p>
-<p>RelativeLayout继承于android.widget.ViewGroup，其按照子元素之间的位置关系完成布局的，作为Android系统五大布局中最灵活也是最常用的一种布局方式，非常适合于一些比较复杂的界面设计。</p>
-<p>注意：在引用其他子元素之前，引用的ID必须已经存在，否则将出现异常。</p>
-<p>常用的位置属性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">android:layout_toLeftOf 该组件位于引用组件的左方</div><div class="line">android:layout_toRightOf 该组件位于引用组件的右方</div><div class="line">android:layout_above 该组件位于引用组件的上方</div><div class="line">android:layout_below 该组件位于引用组件的下方</div><div class="line">android:layout_alignParentLeft 该组件是否对齐父组件的左端</div><div class="line">android:layout_alignParentRight 该组件是否齐其父组件的右端</div><div class="line">android:layout_alignParentTop 该组件是否对齐父组件的顶部</div><div class="line">android:layout_alignParentBottom 该组件是否对齐父组件的底部</div><div class="line">android:layout_centerInParent 该组件是否相对于父组件居中</div><div class="line">android:layout_centerHorizontal 该组件是否横向居中</div><div class="line">android:layout_centerVertical 该组件是否垂直居中</div></pre></td></tr></table></figure>
-<p>Demo:利用相对布局设计一个如下图所示的界面：</p>
-<p>源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot; &gt; &lt;Button android:id=&quot;@+id/btn1&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_centerInParent=&quot;true&quot; android:layout_centerHorizontal=&quot;true&quot; android:text=&quot;Button1&quot; &gt;&lt;/Button&gt; &lt;Button android:id=&quot;@+id/btn2&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_toLeftOf=&quot;@id/btn1&quot; android:layout_above=&quot;@id/btn1&quot; android:text=&quot;Button2&quot; &gt;&lt;/Button&gt; &lt;Button android:id=&quot;@+id/btn3&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_toRightOf=&quot;@id/btn1&quot; android:layout_above=&quot;@id/btn1&quot; android:text=&quot;Button3&quot; &gt;&lt;/Button&gt; &lt;Button android:id=&quot;@+id/btn4&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_toRightOf=&quot;@id/btn2&quot; android:layout_toLeftOf=&quot;@id/btn3&quot; android:layout_above=&quot;@id/btn2&quot; android:text=&quot;Button4&quot; &gt;&lt;/Button&gt;</div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure>
-<p><strong>（4）FrameLayout 框架布局</strong>   </p>
-<p>将所有的子元素放在整个界面的左上角，后面的子元素直接覆盖前面的子元素，所以用的比较少。</p>
-<p><strong>（5） AbsoluteLayou 绝对布局</strong>   </p>
-<p>绝对布局中将所有的子元素通过设置android:layout_x 和 android:layout_y属性，将子元素的坐标位置固定下来，即坐标(android:layout_x, android:layout_y) ，layout_x用来表示横坐标，layout_y用来表示纵坐标。 屏幕左上角为坐标(0,0)，横向往右为正方，纵向往下为正方。实际应用中，这种布局用的比较少，因为Android终端一般机型比较多，各自的屏幕大小。分辨率等可能都不一样，如果用绝对布局，可能导致在有的终端上显示不全等。</p>
-<p><strong>除上面讲过之外常用的几个布局的属性：</strong><br><strong>(1)layout_margin</strong> 用于设置控件边缘相对于父控件的边距 android:layout_marginLeft  android:layout_marginRight android:layout_marginTop android:layout_marginBottom </p>
-<p><strong>(2) layout_padding</strong> </p>
-<p>用于设置控件内容相对于控件边缘的边距 android:layout_paddingLeft android:layout_paddingRight android:layout_paddingTop android:layout_paddingBottom</p>
-<p><strong>(3) layout_width/height</strong> </p>
-<p>用于设置控件的高度和宽度 wrap_content 内容包裹，表示这个控件的里面文字大小填充 fill_parent 跟随父窗口 match_parent</p>
-<p><strong>(4) gravity</strong> </p>
-<p>用于设置View组件里面内容的对齐方式 top bottom left   right  center等</p>
-<p><strong>(5) android:layout_gravity</strong> </p>
-<p>用于设置Container组件的对齐方式 android:layout_alignTop 本元素的上边缘和某元素的的上边缘对齐 android:layout_alignLeft 本元素的左边缘和某元素的的左边缘对齐 android:layout_alignBottom 本元素的下边缘和某元素的的下边缘对齐 android:layout_alignRight 本元素的右边缘和某元素的的右边缘对齐</p>
-<p><a href="http://www.tuicool.com/articles/3uUZbmu" target="_blank" rel="external">Android系统五大布局详解Layout</a></p>
 
           
         
@@ -740,6 +592,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -874,14 +748,32 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
