@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/27/学会使用 Gson @SerializedName/index.html">
 <meta property="og:site_name" content="mmy&#39;s Blog&#39;">
 <meta property="og:description" content="平常使用的有关 Json 转换的库中 Gson 和 fastJson 库用的最多，今天来说说 Gson 在 SimpleNews.io 项目中的使用，对了本次使用的版本为 gson-gson-2.2.4，现在已经更新到了 2.7 版本。 主要内容注解@SerializedName 的使用其它小技巧 一、Gson 是什么？ Gson is a Java library that can be use">
-<meta property="og:updated_time" content="2017-05-27T09:16:22.000Z">
+<meta property="og:updated_time" content="2017-05-28T16:12:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学会使用 Gson @SerializedName">
 <meta name="twitter:description" content="平常使用的有关 Json 转换的库中 Gson 和 fastJson 库用的最多，今天来说说 Gson 在 SimpleNews.io 项目中的使用，对了本次使用的版本为 gson-gson-2.2.4，现在已经更新到了 2.7 版本。 主要内容注解@SerializedName 的使用其它小技巧 一、Gson 是什么？ Gson is a Java library that can be use">
@@ -360,8 +360,7 @@
 <p>Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.  </p>
 </blockquote>
 <p>Gson 是一个 Java 库,可用于将 Java 对象转换为 JSON 字符串表示。也可以被用来将一个 JSON 字符串转换成一个等效的 Java 对象，Gson 可以处理 Java 对象包括已存在的对象。</p>
-<h2 id="二、我的需求"><a href="#二、我的需求" class="headerlink" title="二、我的需求"></a>二、我的需求</h2><p>我们熟知 JSON 和 xml 都用于网络传输的，由于 JSON 比 XML 要更轻量，所以被用于很多项目，我这里也是使用的 JSON 作为服务器和客户端沟通的语言。</p>
-<p>我的需求是将服务器返回的 JSON 转换成 java 对象，原来是按部就班的一层一层使用 JSONObject 进行遍历解析，不太人性化。</p>
+<h2 id="二、我的需求"><a href="#二、我的需求" class="headerlink" title="二、我的需求"></a>二、我的需求</h2><p>我们熟知 JSON 和 xml 都用于网络传输的，由于 JSON 比 XML 要更轻量，所以被用于很多项目，我这里也是使用的 JSON 作为服务器和客户端沟通的语言。<br><a id="more"></a><br>我的需求是将服务器返回的 JSON 转换成 java 对象，原来是按部就班的一层一层使用 JSONObject 进行遍历解析，不太人性化。</p>
 <p>所以想使用 Gson 来简化逻辑，由于还想使用原来的 model 类，也不想更改字段名称，因为 Gson 解析的时候是根据字段名来匹配的，然后就发现了注解 @SerializedName ，不管是对象转 JSON 还是 JSON 转对象，字段名称会被替换成注解的名字，一下就解决了需求。</p>
 <p>同样我们也可以将一个对象转成 JSON 字符串，也可以为变量设置 @SerializedName 注解，这样生成的 JSON 中，Key 值就是注解的值。</p>
 <p>实例：</p>
