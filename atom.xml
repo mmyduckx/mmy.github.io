@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-28T16:11:03.000Z</updated>
+  <updated>2017-06-17T13:40:18.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/05/27/IDEA%20mac%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2017/05/27/IDEA mac快捷键/</id>
     <published>2017-05-27T07:53:20.000Z</published>
-    <updated>2017-05-28T16:11:03.000Z</updated>
+    <updated>2017-06-17T13:40:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Mac键盘符号和修饰键说明</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">⌘ Command</div><div class="line">⇧ Shift</div><div class="line">⌥ Option</div><div class="line">⌃ Control</div><div class="line">↩︎ Return/Enter</div><div class="line">⌫ Delete</div><div class="line">⌦ 向前删除键（Fn+Delete）</div><div class="line">↑ 上箭头</div><div class="line">↓ 下箭头</div><div class="line">← 左箭头</div><div class="line">→ 右箭头</div><div class="line">⇞ Page Up（Fn+↑）</div><div class="line">⇟ Page Down（Fn+↓）</div><div class="line">Home Fn + ←</div><div class="line">End Fn + →</div><div class="line">⇥ 右制表符（Tab键）</div><div class="line">⇤ 左制表符（Shift+Tab）</div><div class="line">⎋ Escape (Esc)</div></pre></td></tr></table></figure>
