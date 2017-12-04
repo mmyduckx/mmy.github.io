@@ -1,339 +1,583 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>
-        
-        undefined
-        
-    </title>
-    <link rel="icon" href= >
-    <!-- TODO: 在font-face加载完毕后改变字体  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
-    <!-- 提前加载place holder  -->
-    <style type="text/css">
-        @font-face {
-            font-family: 'Oswald-Regular';
-            src: url(/font/Oswald-Regular.ttf);
-        }
-    </style>
-    <style type="text/css">
-        .site-intro-placeholder {
-            position: absolute;
-            z-index: -2;
-            top: 0;
-            left: 0px;
-            width: calc(100% + 300px);
-            height: 100%;
-            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-            background-position: center center;
-            transform: translate3d(-226px, 0, 0);
-            animation: gradient-move 2.5s ease-out 0s 1;
-        }
-        @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="mmy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="欢迎来到mmy的小窝~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="mmy&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/排序/index.html">
+<meta property="og:site_name" content="mmy&#39;s Blog">
+<meta property="og:description" content="欢迎来到mmy的小窝~">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mmy&#39;s Blog">
+<meta name="twitter:description" content="欢迎来到mmy的小窝~">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-</style>
-    <link rel="stylesheet" href = /css/style.css?v=20171020 />
-    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
-    
-    <script src="/scripts/main.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/tags/排序/"/>
+
+
+
+
+
+  <title> 标签: 排序 | mmy's Blog </title>
 </head>
-    
-    
-<header class="header">
 
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
     
-    <a class="home-link" href=/>mmy's Blog</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro">
+  
+
+  <div class="container sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-    <!-- 主页  -->
-            
-    <div class="site-intro-img" style="background-image: url(/)"></div>
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-        </p>
-        <!-- 文章页meta -->
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mmy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">thinking&essay</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-    </div>
-</div>
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <script>
-            var browser = {
-                    versions: function () {
-                        var u = window.navigator.userAgent;
-                        return {
-                            userAgent: u,
-                            trident: u.indexOf('Trident') > -1, //IE内核
-                            presto: u.indexOf('Presto') > -1, //opera内核
-                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-                            iPad: u.indexOf('iPad') > -1, //是否为iPad
-                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-                            weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-                        };
-                    }()
-                }
-
-            function fontLoaded(){
-                console.log('font loaded');
-                if (document.getElementsByClassName('site-intro-meta')) {
-                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
-                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
-                        if (postIntroTags) {
-                            postIntroTags.classList.add('post-fade-in');
-                        }
-                        if (postIntroMeat) {
-                            postIntroMeat.classList.add('post-fade-in');
-                        }
-                    }
-                }
-                
-            console.log("userAgent:" + browser.versions.userAgent);
-            // UC不支持跨域，所以直接显示
-            if (browser.versions.uc) {
-                console.log("UCBrowser");
-                fontLoaded();
-            } else {
-                WebFont.load({
-                    custom: {
-                        families: ['Oswald-Regular']
-                    },
-                    loading: function () {  //所有字体开始加载
-                        // console.log('loading');
-                    },
-                    active: function () {  //所有字体已渲染
-                        fontLoaded();
-                    },
-                    inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-                        console.log('inactive: timeout');
-                        fontLoaded();
-                    },
-                    timeout: 7000 // Set the timeout to two seconds
-                });
-            }
-        </script>
-        <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2016/11/16/稳定排序和不稳定排序/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>稳定排序和不稳定排序</span>
-                    </h2>
-                <div class="abstract-content">
-                    首先，排序算法的稳定性大家应该都知道，通俗地讲就是能保证排序前2个相等的数其在序列的前后位置顺序和排序后它们两个的前后位置顺序相同。在简单形式化一下，如果Ai = Aj，Ai原来在位置前，排序后Ai还是要在Aj位置前。
-
-其次，说一下稳定性的好处。排序算法如果是稳定的，那么从一个键上排序，然后再从另一个键上排序，第一个键排序的结果可以为第二个键排序所用。基数排序就是这样，先按低位排序，逐次按高位排序，低位相同的元素其顺序再高位也相同时是不会改变的。另外，如果排序算法稳定，对基于比较的排序算法而言，元素交换的次数可能会少一些（个人感觉，没有证实）。
-回到主题，现在分析一下常见的排序算法的稳...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 排序>排序</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2016/11/16</span>
-                </div>
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        排序
+        <small>标签</small>
+      </h2>
+    </div>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/11/16/稳定排序和不稳定排序/" itemprop="url">
+              
+                <span itemprop="name">稳定排序和不稳定排序</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-11-16T23:14:08+08:00"
+              content="2016-11-16" >
+          11-16
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+  </div>
+
+  
+
+
+          </div>
+          
+
+
+          
+
         </div>
-        <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">archer</a></span>
-    </div>
-    <!-- 不蒜子  -->
-    
-</footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="back-top">&#xe639;</div>
-    <div class="sidebar">
-    <div class="sidebar-header sidebar-header-show-archive">
-        <div class="sidebar-category">
-            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>Archive</span>
-            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>Tag</span>
-        </div>
-    </div>
-    <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-archive">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 4 </div>
-    
-    <div class="post-archive">
-    
-    
-    
-    
-    <div class="archive-year"> 2017 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2017/05/27/学会使用 Gson @SerializedName/" >学会使用 Gson @SerializedName</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2017/05/25/Mac下如何显示隐藏文件:文件夹/" >Mac下如何显示隐藏文件/文件夹</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2017/05/23/hello-world/" >Hello World</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2016 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/16</span><a class="archive-post-title" href= "/2016/11/16/稳定排序和不稳定排序/" >稳定排序和不稳定排序</a>
-        </li>
-    
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-        <div class="sidebar-tags">
-    <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name"><a href= "#">Mac</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">排序</a></span>
-    
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="mmy" />
+          <p class="site-author-name" itemprop="name">mmy</p>
+           
+              <p class="site-description motion-element" itemprop="description">欢迎来到mmy的小窝~</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mmyduckx" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3043889923/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=86 height=86 src="//music.163.com/outchain/player?type=2&id=426881492&auto=1&height=66"></iframe>
+
+        
+
+
+      </section>
+
+      
+
+      
+
     </div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #888; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: false
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tag-list"></div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mmy</span>
 </div>
-    </div>
 
-</div> 
-    <script>
-    var jsInfo = {
-        root: '/'
-    }
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
-    <!-- 不蒜子  -->
-    
-    <!-- CNZZ统计  -->
-    
-    </div>
-    </body>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+</body>
 </html>
-
-
